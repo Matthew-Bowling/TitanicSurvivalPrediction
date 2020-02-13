@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Titanic Prediction Home Page</title>
+  </head>
+  <p>Please enter the individuals information below</p>
+  <form action="make-prediction" method="post">
+    {% csrf_token %}
+    <div>
+        <label for="Gender of Person">What gender are they?: </label>
+        {% for choice in form.sex_type %}
+            <span class="radio">{{ choice }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="Class of person">Which class was the person?:</label>
+        {% for choice in form.p_class %}
+            <span class="radio">{{ choice }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="Departure Location">Where did you depart from?:</label>
+        {% for choice in form.embarked %}
+            <span class="radio">{{ choice }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="Age Category">What is their general age?:</label>
+        {% for choice in form.age_category %}
+            <span class="radio">{{ choice }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="Fare Category">What category was their ticket?:</label>
+        {% for choice in form.fare_category %}
+            <span class="radio">{{ choice }}</span>
+        {% endfor %}
+    </div>
+    <div>
+        <label for="family size">What size was their family?</label>
+        {{ form.family_size }}
+    </div>
+    <input type="submit" value="Submit">
+    </form>
+</html>
