@@ -2,8 +2,6 @@ import time
 import os.path
 import numpy as np
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
 
 my_path = os.path.abspath(os.path.dirname(__file__))
